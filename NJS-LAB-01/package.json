@@ -1,0 +1,23 @@
+{
+  "name": "njs-lab-01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VadymLeus/NodeJS-LVO.git"
+  },
+  "author": "VadymLeus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VadymLeus/NodeJS-LVO/issues"
+  },
+  "homepage": "https://github.com/VadymLeus/NodeJS-LVO#readme",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "yargs": "^17.7.2"
+  }
+}
