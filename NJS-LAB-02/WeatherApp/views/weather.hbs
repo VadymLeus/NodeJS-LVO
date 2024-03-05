@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <style>
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .cities {
+            flex: 1;
+            margin-top: 70px;
+        }
+
+        .weather {
+            flex: 2;
+        }
+
+        .cities-table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        .cities-table th {
+            background-color: #f2f2f2;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .cities-table th, .cities-table td {
+            border: 1px solid black;
+        }
+
+        .weather-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .weather-table th {
+            background-color: #f2f2f2;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .weather-table th, .weather-table td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        
+        .highlight {
+            background-color: lightblue;
+        }
+        
+        .city-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .city-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    {{> header}}
+
+    <div class="container">
+        <div class="cities">
+            <table class="cities-table">
+                <tr>
+                    <th>City</th>
+                </tr>
+                {{#each cities}}
+                    <tr>
+                        <td><a class="city-link" href="/weather?city={{this}}">{{this}}</a></td>
+                    </tr>
+                {{/each}}
+            </table>
+        </div>
+        <div class="weather">
+            <h2>Weather in {{ city }}</h2>
+            <table class="weather-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Weather Icon</td>
+                    <td><img src="{{ weatherIcon }}" alt="Weather Icon"></td>
+                </tr>
+                <tr>
+                    <td>Temperature</td>
+                    <td>{{ temperature }}°C</td>
+                </tr>
+                <tr>
+                    <td>Humidity</td>
+                    <td>{{ humidity }}%</td>
+                </tr>
+                <tr>
+                    <td>Pressure</td>
+                    <td>{{ pressure }} hPa</td>
+                </tr>
+                <tr>
+                    <td>Weather</td>
+                    <td>{{ weatherDescription }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
